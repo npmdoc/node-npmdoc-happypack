@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"happypack",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "happypack",
+    "description": "api documentation for [happypack (v3.0.3)](https://github.com/amireh/happypack#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-happypack.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-happypack) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-happypack.svg)](https://travis-ci.org/npmdoc/node-npmdoc-happypack)",
     "devDependencies": {
-        "happypack": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "happypack": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-happypack",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-happypack",
+    "keywords": [
+        "documentation",
+        "happypack"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_happypack.js",
+    "name": "npmdoc-happypack",
+    "nameAlias": "npmdoc_happypack",
+    "nameOriginal": "npmdoc-happypack",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-happypack"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
