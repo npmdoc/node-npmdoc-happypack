@@ -1,0 +1,43 @@
+<svg height="638" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="638" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-07 02:28:59 +0000   145871 byte  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-07 02:28:59 +0000     5749 byte  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-07 02:28:59 +0000    12174 byte  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-07 02:28:59 +0000      160 byte  happypack.sublime-project</tspan>
+<tspan x="10" y="90">  4.  2017-04-07 02:28:59 +0000    48827 byte  happypack.sublime-workspace</tspan>
+<tspan x="10" y="106">  5.  2017-04-07 02:28:59 +0000     4338 byte  lib/HappyFSCache.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-07 02:28:59 +0000     2314 byte  lib/HappyFakeCompiler.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-07 02:28:59 +0000     3011 byte  lib/HappyFakeLoaderContext.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-07 02:28:59 +0000     1846 byte  lib/HappyForegroundThreadPool.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-07 02:28:59 +0000     2078 byte  lib/HappyLoader.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-07 02:28:59 +0000     1450 byte  lib/HappyMessage.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-07 02:28:59 +0000    10657 byte  lib/HappyPlugin.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-07 02:28:59 +0000     2902 byte  lib/HappyRPCHandler.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-07 02:28:59 +0000     5151 byte  lib/HappyTestUtils.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-07 02:28:59 +0000     4571 byte  lib/HappyThread.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-07 02:28:59 +0000     3287 byte  lib/HappyThreadPool.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-07 02:28:59 +0000     1018 byte  lib/HappyUtils.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-07 02:28:59 +0000     1751 byte  lib/HappyWorker.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-07 02:28:59 +0000     2101 byte  lib/HappyWorkerChannel.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-07 02:28:59 +0000     2739 byte  lib/JSONSerializer.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-07 02:28:59 +0000     1526 byte  lib/OptionParser.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-07 02:28:59 +0000      786 byte  lib/SharedPtr.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-07 02:28:59 +0000      658 byte  lib/SharedPtrMap.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-07 02:28:59 +0000      313 byte  lib/SourceMapSerializer.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-07 02:28:59 +0000     5101 byte  lib/WebpackUtils.js</tspan>
+<tspan x="10" y="426"> 25.  2017-04-07 02:28:59 +0000    11234 byte  lib/applyLoaders.js</tspan>
+<tspan x="10" y="442"> 26.  2017-04-07 02:28:59 +0000      273 byte  lib/fnOnce.js</tspan>
+<tspan x="10" y="458"> 27.  2017-04-07 02:28:59 +0000      229 byte  lib/fnOncePedantic.js</tspan>
+<tspan x="10" y="474"> 28.  2017-04-07 02:28:59 +0000      288 byte  lib/serializeError.js</tspan>
+<tspan x="10" y="490"> 29.  2017-04-07 02:28:59 +0000       46 byte  loader.js</tspan>
+<tspan x="10" y="506"> 30.  2017-04-07 02:28:59 +0000     3197 byte  package.json</tspan>
+<tspan x="10" y="522"> 31.  2017-04-07 02:28:59 +0000      760 byte  scripts/loader-support-status/dist/a.json</tspan>
+<tspan x="10" y="538"> 32.  2017-04-07 02:28:59 +0000      722 byte  scripts/loader-support-status/dist/b.json</tspan>
+<tspan x="10" y="554"> 33.  2017-04-07 02:28:59 +0000     1597 byte  scripts/loader-support-status/dist/main.js</tspan>
+<tspan x="10" y="570"> 34.  2017-04-07 02:28:59 +0000     2547 byte  scripts/loader-support-status/index.js</tspan>
+<tspan x="10" y="586"> 35.  2017-04-07 02:28:59 +0000        6 byte  scripts/loader-support-status/lib/a.js</tspan>
+<tspan x="10" y="602"> 36.  2017-04-07 02:28:59 +0000        6 byte  scripts/loader-support-status/lib/b.js</tspan>
+<tspan x="10" y="618"> 37.  2017-04-07 02:28:59 +0000      458 byte  scripts/loader-support-status/loader.js</tspan>
+</text>
+</svg>

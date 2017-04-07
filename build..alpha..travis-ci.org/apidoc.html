@@ -1,0 +1,2176 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/amireh/happypack#readme"
+
+    >happypack (v3.0.3)</a>
+</h1>
+<h4>webpack speed booster, makes you happy!</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack">module happypack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler">
+            function <span class="apidocSignatureSpan">happypack.</span>HappyFakeCompiler
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler">
+            function <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyWorker">
+            function <span class="apidocSignatureSpan">happypack.</span>HappyWorker
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr">
+            function <span class="apidocSignatureSpan">happypack.</span>SharedPtr
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtrMap">
+            function <span class="apidocSignatureSpan">happypack.</span>SharedPtrMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.ThreadPool">
+            function <span class="apidocSignatureSpan">happypack.</span>ThreadPool
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.extractCompilerOptions">
+            function <span class="apidocSignatureSpan">happypack.</span>extractCompilerOptions
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>HappyFakeCompiler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>HappyUtils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>HappyWorker.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>JSONSerializer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>SERIALIZABLE_OPTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>SharedPtr.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>SharedPtrMap.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>SourceMapSerializer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>WebpackUtils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyFakeCompiler">module happypack.HappyFakeCompiler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler.HappyFakeCompiler">
+            function <span class="apidocSignatureSpan">happypack.</span>HappyFakeCompiler
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyFakeCompiler.prototype">module happypack.HappyFakeCompiler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler.prototype._handleResponse">
+            function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>_handleResponse
+            <span class="apidocSignatureSpan">(id, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler.prototype._sendMessage">
+            function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>_sendMessage
+            <span class="apidocSignatureSpan">(type, payload, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler.prototype.configure">
+            function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>configure
+            <span class="apidocSignatureSpan">(compilerOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler.prototype.resolve">
+            function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>resolve
+            <span class="apidocSignatureSpan">(context, resource, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyRPCHandler">module happypack.HappyRPCHandler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.HappyRPCHandler">
+            function <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyRPCHandler.prototype">module happypack.HappyRPCHandler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.prototype.execute">
+            function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>execute
+            <span class="apidocSignatureSpan">(type, payload, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.prototype.isActive">
+            function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>isActive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.prototype.registerActiveCompiler">
+            function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>registerActiveCompiler
+            <span class="apidocSignatureSpan">(id, compiler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.prototype.registerActiveLoader">
+            function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>registerActiveLoader
+            <span class="apidocSignatureSpan">(id, instance)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.prototype.unregisterActiveCompiler">
+            function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>unregisterActiveCompiler
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler.prototype.unregisterActiveLoader">
+            function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>unregisterActiveLoader
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyUtils">module happypack.HappyUtils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyUtils.generateCompiledPath">
+            function <span class="apidocSignatureSpan">happypack.HappyUtils.</span>generateCompiledPath
+            <span class="apidocSignatureSpan">(filePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyUtils.isReadable">
+            function <span class="apidocSignatureSpan">happypack.HappyUtils.</span>isReadable
+            <span class="apidocSignatureSpan">(filePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyUtils.mkdirSync">
+            function <span class="apidocSignatureSpan">happypack.HappyUtils.</span>mkdirSync
+            <span class="apidocSignatureSpan">(dirPath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyWorker">module happypack.HappyWorker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyWorker.HappyWorker">
+            function <span class="apidocSignatureSpan">happypack.</span>HappyWorker
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyWorker.prototype">module happypack.HappyWorker.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyWorker.prototype.compile">
+            function <span class="apidocSignatureSpan">happypack.HappyWorker.prototype.</span>compile
+            <span class="apidocSignatureSpan">(params, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.JSONSerializer">module happypack.JSONSerializer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.JSONSerializer.deserialize">
+            function <span class="apidocSignatureSpan">happypack.JSONSerializer.</span>deserialize
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.JSONSerializer.serialize">
+            function <span class="apidocSignatureSpan">happypack.JSONSerializer.</span>serialize
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.SharedPtr">module happypack.SharedPtr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr.SharedPtr">
+            function <span class="apidocSignatureSpan">happypack.</span>SharedPtr
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr.safeGet">
+            function <span class="apidocSignatureSpan">happypack.SharedPtr.</span>safeGet
+            <span class="apidocSignatureSpan">(ptr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.SharedPtr.prototype">module happypack.SharedPtr.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr.prototype.acquire">
+            function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>acquire
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr.prototype.get">
+            function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr.prototype.isDead">
+            function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>isDead
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtr.prototype.release">
+            function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>release
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.SharedPtrMap">module happypack.SharedPtrMap</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtrMap.SharedPtrMap">
+            function <span class="apidocSignatureSpan">happypack.</span>SharedPtrMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.SharedPtrMap.prototype">module happypack.SharedPtrMap.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtrMap.prototype.delete">
+            function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>delete
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtrMap.prototype.get">
+            function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtrMap.prototype.getSize">
+            function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>getSize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SharedPtrMap.prototype.set">
+            function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>set
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.SourceMapSerializer">module happypack.SourceMapSerializer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SourceMapSerializer.deserialize">
+            function <span class="apidocSignatureSpan">happypack.SourceMapSerializer.</span>deserialize
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.SourceMapSerializer.serialize">
+            function <span class="apidocSignatureSpan">happypack.SourceMapSerializer.</span>serialize
+            <span class="apidocSignatureSpan">(x)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.WebpackUtils">module happypack.WebpackUtils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.WebpackUtils.applyLoaders">
+            function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>applyLoaders
+            <span class="apidocSignatureSpan">(runContext, sourceCode, sourceMap, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.WebpackUtils.extractLoaders">
+            function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>extractLoaders
+            <span class="apidocSignatureSpan">(entry)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.WebpackUtils.normalizeLoader">
+            function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>normalizeLoader
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.happypack.WebpackUtils.resolveLoaders">
+            function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>resolveLoaders
+            <span class="apidocSignatureSpan">(compiler, loaders, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack" id="apidoc.module.happypack">module happypack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyFakeCompiler" id="apidoc.element.happypack.HappyFakeCompiler">
+        function <span class="apidocSignatureSpan">happypack.</span>HappyFakeCompiler
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyFakeCompiler(params) {
+  assert(typeof params.id === &#x27;string&#x27;,
+    &#x22;id must be assigned to a HappyFakeCompiler.&#x22;);
+
+  assert(typeof params.compilerId === &#x27;string&#x27;,
+    &#x22;compilerId must be assigned to a HappyFakeCompiler.&#x22;);
+
+  assert(typeof params.send === &#x27;function&#x27;,
+    &#x22;send implementation must be assigned to a HappyFakeCompiler.&#x22;);
+
+  this._id = &#x27;FakeCompiler::&#x27; + params.id.toString() + &#x27;-&#x27; + params.compilerId.toString();
+  this._compilerId = params.compilerId;
+  this._sendMessageImpl = params.send;
+  this._requests = {};
+  this._messageId = 0;
+  this.options = {};
+  this.context = null;
+  this.inputFileSystem = fs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler" id="apidoc.element.happypack.HappyRPCHandler">
+        function <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyRPCHandler() {
+  this.activeLoaders = new SharedPtrMap();
+  this.activeCompilers = new SharedPtrMap();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyWorker" id="apidoc.element.happypack.HappyWorker">
+        function <span class="apidocSignatureSpan">happypack.</span>HappyWorker
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyWorker(params) {
+  this._compiler = params.compiler;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr" id="apidoc.element.happypack.SharedPtr">
+        function <span class="apidocSignatureSpan">happypack.</span>SharedPtr
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SharedPtr(value) {
+  this._refs = 1;
+  this._value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtrMap" id="apidoc.element.happypack.SharedPtrMap">
+        function <span class="apidocSignatureSpan">happypack.</span>SharedPtrMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SharedPtrMap() {
+  this.map = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.ThreadPool" id="apidoc.element.happypack.ThreadPool">
+        function <span class="apidocSignatureSpan">happypack.</span>ThreadPool
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyThreadPool(config) {
+  var rpcHandler = new HappyRPCHandler();
+
+  assert(!isNaN(config.size),
+    &#x22;ArgumentError: HappyThreadPool requires a valid integer for its size, but got NaN.&#x22;
+  );
+
+  assert(config.size &#x3e; 0,
+    &#x22;ArgumentError: HappyThreadPool requires a positive integer for its size &#x22; +
+    &#x22;, but got {&#x22; + config.size + &#x22;}.&#x22;
+  );
+
+  var threads = createThreads(config.size, rpcHandler, {
+    id: config.id,
+    verbose: config.verbose,
+    debug: config.debug,
+  });
+
+  var getThread = RoundRobinThreadPool(threads);
+
+  return {
+    size: config.size,
+
+    start: function(compilerId, compiler, compilerOptions, done) {
+      rpcHandler.registerActiveCompiler(compilerId, compiler);
+
+      async.parallel(threads.filter(not(send(&#x27;isOpen&#x27;))).map(get(&#x27;open&#x27;)), function(err) {
+        if (err) {
+          return done(err);
+        }
+
+        async.parallel(threads.map(function(thread) {
+          return function(callback) {
+            thread.configure(compilerId, compilerOptions, callback);
+          }
+        }), done);
+      });
+    },
+
+    isRunning: function() {
+      return !threads.some(not(send(&#x27;isOpen&#x27;)));
+    },
+
+    compile: function(loaderId, loader, params, done) {
+      var worker = getThread();
+
+      rpcHandler.registerActiveLoader(loaderId, loader);
+
+      worker.compile(params, function() {
+        rpcHandler.unregisterActiveLoader(loaderId);
+
+        done.apply(null, arguments);
+      });
+    },
+
+    stop: function(compilerId) {
+      rpcHandler.unregisterActiveCompiler(compilerId);
+
+      if (!rpcHandler.isActive()) {
+        threads.filter(send(&#x27;isOpen&#x27;)).map(send(&#x27;close&#x27;));
+      }
+    },
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Here&#x27;s an example of using a custom pool of 5 threads that will be shared
+between loaders for both JS and SCSS/LESS/whatever sources:
+
+```javascript
+// @file: webpack.config.js
+var HappyPack = require(&#x27;happypack&#x27;);
+var happyThreadPool = HappyPack.<span class="apidocCodeKeywordSpan">ThreadPool</span>({ size: 5 });
+
+module.exports = {
+// ...
+plugins: [
+  new HappyPack({
+    id: &#x27;js&#x27;,
+    threadPool: happyThreadPool
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.extractCompilerOptions" id="apidoc.element.happypack.extractCompilerOptions">
+        function <span class="apidocSignatureSpan">happypack.</span>extractCompilerOptions
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractCompilerOptions = function (options) {
+  var ALLOWED_KEYS = HappyPlugin.SERIALIZABLE_OPTIONS;
+
+  return Object.keys(options).reduce(function(hsh, key) {
+    if (ALLOWED_KEYS.indexOf(key) &#x3e; -1) {
+      hsh[key] = options[key];
+    }
+
+    return hsh;
+  }, {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyFakeCompiler" id="apidoc.module.happypack.HappyFakeCompiler">module happypack.HappyFakeCompiler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyFakeCompiler.HappyFakeCompiler" id="apidoc.element.happypack.HappyFakeCompiler.HappyFakeCompiler">
+        function <span class="apidocSignatureSpan">happypack.</span>HappyFakeCompiler
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyFakeCompiler(params) {
+  assert(typeof params.id === &#x27;string&#x27;,
+    &#x22;id must be assigned to a HappyFakeCompiler.&#x22;);
+
+  assert(typeof params.compilerId === &#x27;string&#x27;,
+    &#x22;compilerId must be assigned to a HappyFakeCompiler.&#x22;);
+
+  assert(typeof params.send === &#x27;function&#x27;,
+    &#x22;send implementation must be assigned to a HappyFakeCompiler.&#x22;);
+
+  this._id = &#x27;FakeCompiler::&#x27; + params.id.toString() + &#x27;-&#x27; + params.compilerId.toString();
+  this._compilerId = params.compilerId;
+  this._sendMessageImpl = params.send;
+  this._requests = {};
+  this._messageId = 0;
+  this.options = {};
+  this.context = null;
+  this.inputFileSystem = fs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyFakeCompiler.prototype" id="apidoc.module.happypack.HappyFakeCompiler.prototype">module happypack.HappyFakeCompiler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyFakeCompiler.prototype._handleResponse" id="apidoc.element.happypack.HappyFakeCompiler.prototype._handleResponse">
+        function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>_handleResponse
+        <span class="apidocSignatureSpan">(id, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_handleResponse = function (id, message) {
+  var callback;
+
+  if (!this._requests[id]) return; // not for us
+
+  assert(message.payload.hasOwnProperty(&#x27;error&#x27;),
+    &#x22;Compiler message payload must contain an @error field!&#x22;);
+
+  assert(message.payload.hasOwnProperty(&#x27;result&#x27;),
+    &#x22;Compiler message payload must contain a @result field!&#x22;);
+
+  callback = this._requests[id];
+  delete this._requests[id];
+
+  callback(message.payload.error, message.payload.result);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    start: function(compilerId, compiler, compilerOptions, done) {
+var fakeCompiler = new HappyFakeCompiler({
+  id: &#x27;foreground&#x27;,
+  compilerId: compilerId,
+  send: function executeCompilerRPC(message) {
+    // TODO: DRY alert, see HappyThread.js
+    rpcHandler.execute(message.data.type, message.data.payload, function serveRPCResult(error, result) {
+      fakeCompiler.<span class="apidocCodeKeywordSpan">_handleResponse</span>(message.id, {
+        payload: {
+          error: error || null,
+          result: result || null
+        }
+      });
+    });
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyFakeCompiler.prototype._sendMessage" id="apidoc.element.happypack.HappyFakeCompiler.prototype._sendMessage">
+        function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>_sendMessage
+        <span class="apidocSignatureSpan">(type, payload, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_sendMessage = function (type, payload, done) {
+  var messageId = this._id + &#x27;:&#x27; + (++this._messageId).toString();
+
+  this._requests[messageId] = done;
+  this._sendMessageImpl({
+    id: messageId,
+    name: &#x27;COMPILER_REQUEST&#x27;,
+    data: {
+      type: type,
+      compilerId: this._compilerId,
+      payload: payload,
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {String} [done.error=null]
+ *        A resolving error, if any.
+ *
+ * @param {String} done.filePath
+ *        The resolved file path.
+ */
+HFCPt.resolve = function(context, resource, done) {
+  this.<span class="apidocCodeKeywordSpan">_sendMessage</span>(&#x27;resolve&#x27;, {
+    context: context,
+    resource: resource
+  }, done);
+};
+
+// @private
+HFCPt._handleResponse = function(id, message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyFakeCompiler.prototype.configure" id="apidoc.element.happypack.HappyFakeCompiler.prototype.configure">
+        function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>configure
+        <span class="apidocSignatureSpan">(compilerOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (compilerOptions) {
+  assert(compilerOptions &#x26;&#x26; typeof compilerOptions === &#x27;object&#x27;);
+
+  this.options = compilerOptions;
+  this.context = compilerOptions.context;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          result: result || null
+        }
+      });
+    });
+  }
+});
+
+fakeCompiler.<span class="apidocCodeKeywordSpan">configure</span>(compiler.options);
+
+rpcHandler = new HappyRPCHandler();
+rpcHandler.registerActiveCompiler(compilerId, compiler);
+
+worker = new HappyWorker({
+  compiler: fakeCompiler,
+  loaders: config.loaders
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyFakeCompiler.prototype.resolve" id="apidoc.element.happypack.HappyFakeCompiler.prototype.resolve">
+        function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>resolve
+        <span class="apidocSignatureSpan">(context, resource, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (context, resource, done) {
+  this._sendMessage(&#x27;resolve&#x27;, {
+    context: context,
+    resource: resource
+  }, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var resolveSyncNotSupported = NotSupported(&#x27;this.resolveSync()&#x27;);
+var execNotSupported = NotSupported(&#x27;this.exec()&#x27;);
+
+function HappyFakeLoaderContext(initialValues) {
+var loader = {};
+
+// for compiler RPCs, like this.<span class="apidocCodeKeywordSpan">resolve</span>()
+loader._compiler = null;
+
+// for loader RPCs, like this.emitWarning()
+loader._remoteLoaderId = null;
+
+loader.version = 1; // https://webpack.github.io/docs/loaders.html#version
+loader.webpack = false;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyRPCHandler" id="apidoc.module.happypack.HappyRPCHandler">module happypack.HappyRPCHandler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.HappyRPCHandler" id="apidoc.element.happypack.HappyRPCHandler.HappyRPCHandler">
+        function <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyRPCHandler() {
+  this.activeLoaders = new SharedPtrMap();
+  this.activeCompilers = new SharedPtrMap();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyRPCHandler.prototype" id="apidoc.module.happypack.HappyRPCHandler.prototype">module happypack.HappyRPCHandler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.prototype.execute" id="apidoc.element.happypack.HappyRPCHandler.prototype.execute">
+        function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>execute
+        <span class="apidocSignatureSpan">(type, payload, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (type, payload, done) {
+  var compiler, loader;
+
+  if (COMPILER_RPCs.hasOwnProperty(type)) {
+    if (payload.compilerId) {
+      compiler = this.activeCompilers.get(payload.compilerId);
+    }
+    else {
+      compiler = this.activeCompilers.get(&#x27;default&#x27;);
+    }
+
+    assert(!!compiler,
+      &#x22;A compiler RPC was dispatched, but no compiler instance was registered!&#x22;
+    );
+
+    COMPILER_RPCs[type](compiler, payload, done);
+  }
+  else if (LOADER_RPCS.hasOwnProperty(type)) {
+    loader = this.activeLoaders.get(payload.remoteLoaderId);
+
+    assert(!!loader,
+      &#x22;A loader RPC was dispatched to HappyLoader[&#x22; + payload.remoteLoaderId +
+      &#x22;] but no such loader is active!&#x22;
+    );
+
+    LOADER_RPCS[type](loader, payload, done);
+  }
+  else {
+    assert(false, &#x22;Unrecognized loader RPC &#x27;&#x22; + type + &#x27;&#x22;&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    start: function(compilerId, compiler, compilerOptions, done) {
+var fakeCompiler = new HappyFakeCompiler({
+  id: &#x27;foreground&#x27;,
+  compilerId: compilerId,
+  send: function executeCompilerRPC(message) {
+    // TODO: DRY alert, see HappyThread.js
+    rpcHandler.<span class="apidocCodeKeywordSpan">execute</span>(message.data.type, message.data.payload, function serveRPCResult
+(error, result) {
+      fakeCompiler._handleResponse(message.id, {
+        payload: {
+          error: error || null,
+          result: result || null
+        }
+      });
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.prototype.isActive" id="apidoc.element.happypack.HappyRPCHandler.prototype.isActive">
+        function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>isActive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isActive = function () {
+  return this.activeCompilers.getSize() &#x3e; 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        done.apply(null, arguments);
+      });
+    },
+
+    stop: function(compilerId) {
+      rpcHandler.unregisterActiveCompiler(compilerId);
+
+      if (!rpcHandler.<span class="apidocCodeKeywordSpan">isActive</span>()) {
+        threads.filter(send(&#x27;isOpen&#x27;)).map(send(&#x27;close&#x27;));
+      }
+    },
+  };
+}
+
+function createThreads(count, rpcHandler, config) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.prototype.registerActiveCompiler" id="apidoc.element.happypack.HappyRPCHandler.prototype.registerActiveCompiler">
+        function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>registerActiveCompiler
+        <span class="apidocSignatureSpan">(id, compiler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerActiveCompiler = function (id, compiler) {
+  this.activeCompilers.set(id || &#x27;default&#x27;, compiler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+  }
+});
+
+fakeCompiler.configure(compiler.options);
+
+rpcHandler = new HappyRPCHandler();
+rpcHandler.<span class="apidocCodeKeywordSpan">registerActiveCompiler</span>(compilerId, compiler);
+
+worker = new HappyWorker({
+  compiler: fakeCompiler,
+  loaders: config.loaders
+});
+
+done();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.prototype.registerActiveLoader" id="apidoc.element.happypack.HappyRPCHandler.prototype.registerActiveLoader">
+        function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>registerActiveLoader
+        <span class="apidocSignatureSpan">(id, instance)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerActiveLoader = function (id, instance) {
+  this.activeLoaders.set(id || &#x27;1&#x27;, instance);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+stop: function(/*compilerId*/) {
+  worker = null;
+  rpcHandler = null;
+},
+
+compile: function(loaderId, loader, params, done) {
+  rpcHandler.<span class="apidocCodeKeywordSpan">registerActiveLoader</span>(loaderId, loader);
+
+  worker.compile(params, function() {
+    rpcHandler.unregisterActiveLoader(loaderId);
+
+    done.apply(null, arguments);
+  });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.prototype.unregisterActiveCompiler" id="apidoc.element.happypack.HappyRPCHandler.prototype.unregisterActiveCompiler">
+        function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>unregisterActiveCompiler
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unregisterActiveCompiler = function (id) {
+  this.activeCompilers.delete(id || &#x27;default&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        rpcHandler.unregisterActiveLoader(loaderId);
+
+        done.apply(null, arguments);
+      });
+    },
+
+    stop: function(compilerId) {
+      rpcHandler.<span class="apidocCodeKeywordSpan">unregisterActiveCompiler</span>(compilerId);
+
+      if (!rpcHandler.isActive()) {
+        threads.filter(send(&#x27;isOpen&#x27;)).map(send(&#x27;close&#x27;));
+      }
+    },
+  };
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyRPCHandler.prototype.unregisterActiveLoader" id="apidoc.element.happypack.HappyRPCHandler.prototype.unregisterActiveLoader">
+        function <span class="apidocSignatureSpan">happypack.HappyRPCHandler.prototype.</span>unregisterActiveLoader
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unregisterActiveLoader = function (id) {
+  this.activeLoaders.delete(id || &#x27;1&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      rpcHandler = null;
+    },
+
+    compile: function(loaderId, loader, params, done) {
+      rpcHandler.registerActiveLoader(loaderId, loader);
+
+      worker.compile(params, function() {
+        rpcHandler.<span class="apidocCodeKeywordSpan">unregisterActiveLoader</span>(loaderId);
+
+        done.apply(null, arguments);
+      });
+    },
+  };
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyUtils" id="apidoc.module.happypack.HappyUtils">module happypack.HappyUtils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyUtils.generateCompiledPath" id="apidoc.element.happypack.HappyUtils.generateCompiledPath">
+        function <span class="apidocSignatureSpan">happypack.HappyUtils.</span>generateCompiledPath
+        <span class="apidocSignatureSpan">(filePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generateCompiledPath = function (filePath) {
+  return &#x27;s-&#x27; + hashString(filePath + Math.random().toString(36).substr(2));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyUtils.isReadable" id="apidoc.element.happypack.HappyUtils.isReadable">
+        function <span class="apidocSignatureSpan">happypack.HappyUtils.</span>isReadable
+        <span class="apidocSignatureSpan">(filePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isReadable = function (filePath) {
+  try {
+    var ret = accessFile(filePath, fs.R_OK);
+    if (ret !== undefined) {
+      return ret;
+    }
+    return true;
+  }
+  catch(e) {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var oldCache, staleEntryCount;
+
+cache.context = currentContext;
+
+assert(typeof currentContext === &#x27;object&#x27; &#x26;&#x26; !!currentContext,
+  &#x22;HappyFSCache requires a @context parameter to work.&#x22;);
+
+if (!Utils.<span class="apidocCodeKeywordSpan">isReadable</span>(cachePath)) {
+  if (config.verbose) {
+    console.log(&#x27;Happy[%s]: No cache was found, starting fresh.&#x27;, id);
+  }
+
+  return false;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyUtils.mkdirSync" id="apidoc.element.happypack.HappyUtils.mkdirSync">
+        function <span class="apidocSignatureSpan">happypack.HappyUtils.</span>mkdirSync
+        <span class="apidocSignatureSpan">(dirPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdirSync = function (dirPath) {
+  try {
+    mkdirp.sync(dirPath);
+  }
+  catch (e) {
+    if (!e.message.match(&#x27;EEXIST&#x27;)) {
+      throw e;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyWorker" id="apidoc.module.happypack.HappyWorker">module happypack.HappyWorker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyWorker.HappyWorker" id="apidoc.element.happypack.HappyWorker.HappyWorker">
+        function <span class="apidocSignatureSpan">happypack.</span>HappyWorker
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HappyWorker(params) {
+  this._compiler = params.compiler;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.HappyWorker.prototype" id="apidoc.module.happypack.HappyWorker.prototype">module happypack.HappyWorker.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.HappyWorker.prototype.compile" id="apidoc.element.happypack.HappyWorker.prototype.compile">
+        function <span class="apidocSignatureSpan">happypack.HappyWorker.prototype.</span>compile
+        <span class="apidocSignatureSpan">(params, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (params, done) {
+  assert(typeof params.loaderContext.resourcePath === &#x27;string&#x27;,
+    &#x22;ArgumentError: expected params.sourcePath to contain path to the source file.&#x22;
+  );
+
+  assert(typeof params.compiledPath === &#x27;string&#x27;,
+    &#x22;ArgumentError: expected params.compiledPath to contain path to the compiled file.&#x22;
+  );
+
+  assert(Array.isArray(params.loaders),
+    &#x22;ArgumentError: expected params.loaders to contain a list of loaders.&#x22;
+  );
+
+  applyLoaders({
+    compiler: this._compiler,
+    loaders: params.loaders,
+    loaderContext: params.loaderContext,
+  }, params.loaderContext.sourceCode, params.loaderContext.sourceMap, function(err, source, sourceMap) {
+    var compiledPath = params.compiledPath;
+    var success = false;
+
+    if (err) {
+      console.error(err);
+      fs.writeFileSync(compiledPath, serializeError(err), &#x27;utf-8&#x27;);
+    }
+    else {
+      fs.writeFileSync(compiledPath, source);
+      fs.writeFileSync(compiledPath + &#x27;.map&#x27;, SourceMapSerializer.serialize(sourceMap));
+
+      success = true;
+    }
+
+    done({
+      sourcePath: params.loaderContext.resourcePath,
+      compiledPath: compiledPath,
+      success: success
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      worker = null;
+      rpcHandler = null;
+    },
+
+    compile: function(loaderId, loader, params, done) {
+      rpcHandler.registerActiveLoader(loaderId, loader);
+
+      worker.<span class="apidocCodeKeywordSpan">compile</span>(params, function() {
+        rpcHandler.unregisterActiveLoader(loaderId);
+
+        done.apply(null, arguments);
+      });
+    },
+  };
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.JSONSerializer" id="apidoc.module.happypack.JSONSerializer">module happypack.JSONSerializer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.JSONSerializer.deserialize" id="apidoc.element.happypack.JSONSerializer.deserialize">
+        function <span class="apidocSignatureSpan">happypack.JSONSerializer.</span>deserialize
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deserialize = function (string) {
+  return JSON.parse(string, function(key, value) {
+    if (Array.isArray(value) &#x26;&#x26; value.length === 3 &#x26;&#x26; value[0] === &#x27;@__REGEXP&#x27;) {
+      return new RegExp(value[1], value[2]);
+    }
+
+    return value;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  loader.emitError(payload.message);
+},
+
+emitFile: function(loader, payload) {
+  loader.emitFile(
+    payload.name,
+    payload.contents,
+    SourceMapSerializer.<span class="apidocCodeKeywordSpan">deserialize</span>(payload.sourceMap)
+  );
+},
+
+addDependency: function(loader, payload) {
+  loader.addDependency(payload.file);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.JSONSerializer.serialize" id="apidoc.element.happypack.JSONSerializer.serialize">
+        function <span class="apidocSignatureSpan">happypack.JSONSerializer.</span>serialize
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize = function (obj) {
+  var regexps   = [];
+  var str;
+
+  // Creates a JSON string representation of the object and uses placeholders
+  // for functions and regexps (identified by index) which are later
+  // replaced.
+  str = stringify(obj, function (key, value) {
+    if (typeof value === &#x27;object&#x27; &#x26;&#x26; isRegExp(value)) {
+      return &#x27;@__REGEXP{&#x27; + (regexps.push(value) - 1) + &#x27;}@&#x27;;
+    }
+
+    return value;
+  });
+
+  // Protects against `JSON.stringify()` returning `undefined`, by serializing
+  // to the literal string: &#x22;undefined&#x22;.
+  if (typeof str !== &#x27;string&#x27;) {
+    return String(str);
+  }
+
+  // Replace unsafe HTML and invalid JavaScript line terminator chars with
+  // their safe Unicode char counterpart. This _must_ happen before the
+  // regexps and functions are serialized and added back to the string.
+  str = str.replace(UNSAFE_CHARS_REGEXP, function (unsafeChar) {
+    return UNICODE_CHARS[unsafeChar];
+  });
+
+  if (regexps.length === 0) {
+    return str;
+  }
+
+  // Replaces all occurrences of function and regexp placeholders in the JSON
+  // string with their string representations. If the original value can not
+  // be found, then `undefined` is used.
+  return str.replace(PLACE_HOLDER_REGEXP, function (match, type, valueIndex) {
+    if (type === &#x27;REGEXP&#x27;) {
+      return JSON.stringify(serializeRegExp(regexps[valueIndex]));
+    }
+
+    return match;
+  }, 0, function() {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (err) {
+  console.error(err);
+  fs.writeFileSync(compiledPath, serializeError(err), &#x27;utf-8&#x27;);
+}
+else {
+  fs.writeFileSync(compiledPath, source);
+  fs.writeFileSync(compiledPath + &#x27;.map&#x27;, SourceMapSerializer.<span class="apidocCodeKeywordSpan">serialize</span>(sourceMap
+));
+
+  success = true;
+}
+
+done({
+  sourcePath: params.loaderContext.resourcePath,
+  compiledPath: compiledPath,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.SharedPtr" id="apidoc.module.happypack.SharedPtr">module happypack.SharedPtr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr.SharedPtr" id="apidoc.element.happypack.SharedPtr.SharedPtr">
+        function <span class="apidocSignatureSpan">happypack.</span>SharedPtr
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SharedPtr(value) {
+  this._refs = 1;
+  this._value = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr.safeGet" id="apidoc.element.happypack.SharedPtr.safeGet">
+        function <span class="apidocSignatureSpan">happypack.SharedPtr.</span>safeGet
+        <span class="apidocSignatureSpan">(ptr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">safeGet = function (ptr) {
+  return ptr &#x26;&#x26; ptr.get() || null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  else {
+    this.map[key].acquire();
+  }
+};
+
+SharedPtrMap.prototype.get = function(key) {
+  return SharedPtr.<span class="apidocCodeKeywordSpan">safeGet</span>(this.map[key]);
+};
+
+SharedPtrMap.prototype.getSize = function() {
+  return Object.keys(this.map).length;
+};
+
+SharedPtrMap.prototype.delete = function(key) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.SharedPtr.prototype" id="apidoc.module.happypack.SharedPtr.prototype">module happypack.SharedPtr.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr.prototype.acquire" id="apidoc.element.happypack.SharedPtr.prototype.acquire">
+        function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>acquire
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">acquire = function () {
+  assert(this.hasOwnProperty(&#x27;_value&#x27;), &#x22;Invalid attempt to acquire a dangling pointer!&#x22;);
+
+  this._refs += 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+SharedPtrMap.prototype.set = function(key, value) {
+  if (!this.map.hasOwnProperty(key)) {
+    this.map[key] = new SharedPtr(value);
+  }
+  else {
+    this.map[key].<span class="apidocCodeKeywordSpan">acquire</span>();
+  }
+};
+
+SharedPtrMap.prototype.get = function(key) {
+  return SharedPtr.safeGet(this.map[key]);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr.prototype.get" id="apidoc.element.happypack.SharedPtr.prototype.get">
+        function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function () {
+  return this._value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+HappyRPCHandler.prototype.execute = function(type, payload, done) {
+  var compiler, loader;
+
+  if (COMPILER_RPCs.hasOwnProperty(type)) {
+if (payload.compilerId) {
+  compiler = this.activeCompilers.<span class="apidocCodeKeywordSpan">get</span>(payload.compilerId);
+}
+else {
+  compiler = this.activeCompilers.get(&#x27;default&#x27;);
+}
+
+assert(!!compiler,
+  &#x22;A compiler RPC was dispatched, but no compiler instance was registered!&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr.prototype.isDead" id="apidoc.element.happypack.SharedPtr.prototype.isDead">
+        function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>isDead
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isDead = function () {
+  return this._refs === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return Object.keys(this.map).length;
+};
+
+SharedPtrMap.prototype.delete = function(key) {
+  if (this.map[key]) {
+    this.map[key].release();
+
+    if (this.map[key].<span class="apidocCodeKeywordSpan">isDead</span>()) {
+      delete this.map[key];
+    }
+  }
+};
+
+module.exports = SharedPtrMap;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtr.prototype.release" id="apidoc.element.happypack.SharedPtr.prototype.release">
+        function <span class="apidocSignatureSpan">happypack.SharedPtr.prototype.</span>release
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">release = function () {
+  this._refs -= 1;
+
+  assert(this._refs &#x3e;= 0,
+    &#x22;Potential race condition or memory leak; shared pointer reference count &#x22; +
+    &#x22;has gone below zero! (&#x22; + this._refs + &#x22;)&#x22;
+  );
+
+  if (this._refs === 0) {
+    delete this._value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+SharedPtrMap.prototype.getSize = function() {
+  return Object.keys(this.map).length;
+};
+
+SharedPtrMap.prototype.delete = function(key) {
+  if (this.map[key]) {
+    this.map[key].<span class="apidocCodeKeywordSpan">release</span>();
+
+    if (this.map[key].isDead()) {
+      delete this.map[key];
+    }
+  }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.SharedPtrMap" id="apidoc.module.happypack.SharedPtrMap">module happypack.SharedPtrMap</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtrMap.SharedPtrMap" id="apidoc.element.happypack.SharedPtrMap.SharedPtrMap">
+        function <span class="apidocSignatureSpan">happypack.</span>SharedPtrMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SharedPtrMap() {
+  this.map = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.SharedPtrMap.prototype" id="apidoc.module.happypack.SharedPtrMap.prototype">module happypack.SharedPtrMap.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtrMap.prototype.delete" id="apidoc.element.happypack.SharedPtrMap.prototype.delete">
+        function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>delete
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (key) {
+  if (this.map[key]) {
+    this.map[key].release();
+
+    if (this.map[key].isDead()) {
+      delete this.map[key];
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+HappyRPCHandler.prototype.isActive = function() {
+  return this.activeCompilers.getSize() &#x3e; 0;
+};
+
+HappyRPCHandler.prototype.unregisterActiveCompiler = function(id) {
+  this.activeCompilers.<span class="apidocCodeKeywordSpan">delete</span>(id || &#x27;default&#x27;);
+};
+
+HappyRPCHandler.prototype.registerActiveLoader = function(id, instance) {
+  this.activeLoaders.set(id || &#x27;1&#x27;, instance);
+};
+
+HappyRPCHandler.prototype.unregisterActiveLoader = function(id) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtrMap.prototype.get" id="apidoc.element.happypack.SharedPtrMap.prototype.get">
+        function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key) {
+  return SharedPtr.safeGet(this.map[key]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+HappyRPCHandler.prototype.execute = function(type, payload, done) {
+  var compiler, loader;
+
+  if (COMPILER_RPCs.hasOwnProperty(type)) {
+if (payload.compilerId) {
+  compiler = this.activeCompilers.<span class="apidocCodeKeywordSpan">get</span>(payload.compilerId);
+}
+else {
+  compiler = this.activeCompilers.get(&#x27;default&#x27;);
+}
+
+assert(!!compiler,
+  &#x22;A compiler RPC was dispatched, but no compiler instance was registered!&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtrMap.prototype.getSize" id="apidoc.element.happypack.SharedPtrMap.prototype.getSize">
+        function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>getSize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSize = function () {
+  return Object.keys(this.map).length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+HappyRPCHandler.prototype.registerActiveCompiler = function(id, compiler) {
+  this.activeCompilers.set(id || &#x27;default&#x27;, compiler);
+};
+
+HappyRPCHandler.prototype.isActive = function() {
+  return this.activeCompilers.<span class="apidocCodeKeywordSpan">getSize</span>() &#x3e; 0;
+};
+
+HappyRPCHandler.prototype.unregisterActiveCompiler = function(id) {
+  this.activeCompilers.delete(id || &#x27;default&#x27;);
+};
+
+HappyRPCHandler.prototype.registerActiveLoader = function(id, instance) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SharedPtrMap.prototype.set" id="apidoc.element.happypack.SharedPtrMap.prototype.set">
+        function <span class="apidocSignatureSpan">happypack.SharedPtrMap.prototype.</span>set
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value) {
+  if (!this.map.hasOwnProperty(key)) {
+    this.map[key] = new SharedPtr(value);
+  }
+  else {
+    this.map[key].acquire();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function HappyRPCHandler() {
+  this.activeLoaders = new SharedPtrMap();
+  this.activeCompilers = new SharedPtrMap();
+}
+
+HappyRPCHandler.prototype.registerActiveCompiler = function(id, compiler) {
+  this.activeCompilers.<span class="apidocCodeKeywordSpan">set</span>(id || &#x27;default&#x27;, compiler);
+};
+
+HappyRPCHandler.prototype.isActive = function() {
+  return this.activeCompilers.getSize() &#x3e; 0;
+};
+
+HappyRPCHandler.prototype.unregisterActiveCompiler = function(id) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.SourceMapSerializer" id="apidoc.module.happypack.SourceMapSerializer">module happypack.SourceMapSerializer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SourceMapSerializer.deserialize" id="apidoc.element.happypack.SourceMapSerializer.deserialize">
+        function <span class="apidocSignatureSpan">happypack.SourceMapSerializer.</span>deserialize
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deserialize = function (x) {
+  if (typeof x === &#x27;string&#x27;) {
+    try {
+      return JSON.parse(x);
+    } catch (e) {
+      return null;
+    }
+  }
+  return x || null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  loader.emitError(payload.message);
+},
+
+emitFile: function(loader, payload) {
+  loader.emitFile(
+    payload.name,
+    payload.contents,
+    SourceMapSerializer.<span class="apidocCodeKeywordSpan">deserialize</span>(payload.sourceMap)
+  );
+},
+
+addDependency: function(loader, payload) {
+  loader.addDependency(payload.file);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.SourceMapSerializer.serialize" id="apidoc.element.happypack.SourceMapSerializer.serialize">
+        function <span class="apidocSignatureSpan">happypack.SourceMapSerializer.</span>serialize
+        <span class="apidocSignatureSpan">(x)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize = function (x) {
+  if (typeof x === &#x27;string&#x27;) {
+    return x;
+  }
+  else {
+    return JSON.stringify(x || null);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (err) {
+  console.error(err);
+  fs.writeFileSync(compiledPath, serializeError(err), &#x27;utf-8&#x27;);
+}
+else {
+  fs.writeFileSync(compiledPath, source);
+  fs.writeFileSync(compiledPath + &#x27;.map&#x27;, SourceMapSerializer.<span class="apidocCodeKeywordSpan">serialize</span>(sourceMap
+));
+
+  success = true;
+}
+
+done({
+  sourcePath: params.loaderContext.resourcePath,
+  compiledPath: compiledPath,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.happypack.WebpackUtils" id="apidoc.module.happypack.WebpackUtils">module happypack.WebpackUtils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.WebpackUtils.applyLoaders" id="apidoc.element.happypack.WebpackUtils.applyLoaders">
+        function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>applyLoaders
+        <span class="apidocSignatureSpan">(runContext, sourceCode, sourceMap, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function applyLoaders(runContext, sourceCode, sourceMap, done) {
+  assert(runContext.compiler, &#x22;Missing webpack compiler instance!&#x22;);
+
+  // we start out by creating fake loader contexts for every loader
+  var loaders = runContext.loaders.map(function(loader) {
+    return {
+      request: loader.request,
+      path: loader.path,
+      query: loader.query,
+      module: require(loader.path),
+
+      // TODO: this is probably not the best place to create the context, and it
+      // also should be cached at some layer
+      context: HappyFakeLoaderContext({
+        _compiler: runContext.compiler, // for compiler RPCs
+        _remoteLoaderId: runContext.loaderContext.remoteLoaderId, // for loader RPCs
+        fs: runContext.compiler.inputFileSystem,
+
+        query: loader.query,
+        options: runContext.compiler.options,
+
+        request: runContext.loaderContext.request,
+        resource: runContext.loaderContext.resource,
+        resourcePath: runContext.loaderContext.resourcePath,
+        resourceQuery: runContext.loaderContext.resourceQuery,
+        context: runContext.loaderContext.context,
+
+        sourceMap: Boolean(runContext.loaderContext.useSourceMap),
+        target: runContext.loaderContext.target,
+      })
+    };
+  });
+
+  loaders.forEach(function exposeLoaderSetToEachLoader(loader, index) {
+    loader.context.loaders = loaders;
+    loader.context.loaderIndex = index;
+  });
+
+  // Go through the pitching phase. This might affect the loader contexts.
+  applyPitchLoaders(runContext.loaderContext.request, loaders, function(err, pitchResult) {
+    if (err) {
+      return done(err);
+    }
+
+    var apply = NormalLoaderApplier(loaders, pitchResult.dataMap, done);
+
+    // pitching phase did yield something so we skip the loaders to the right
+    // and use the yielded code as the starting sourceCode
+    if (pitchResult.sourceCode) {
+      apply(pitchResult.cursor - 1, pitchResult.sourceCode, pitchResult.sourceMap);
+    }
+    // otherwise, we just start from the right-most loader using the input
+    // source code and map:
+    else {
+      apply(loaders.length - 1, sourceCode, sourceMap);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.WebpackUtils.extractLoaders" id="apidoc.element.happypack.WebpackUtils.extractLoaders">
+        function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>extractLoaders
+        <span class="apidocSignatureSpan">(entry)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extractLoaders(entry) {
+  if (typeof entry === &#x27;object&#x27; &#x26;&#x26; entry.loaders) {
+    return entry.loaders.reduce(function(list, loader) {
+      return list.concat(extractLoaders(loader));
+    }, []);
+  }
+  else if (typeof entry === &#x27;string&#x27;) {
+    return extractPathAndQueryFromString(entry);
+  }
+  else if (typeof entry.loader === &#x27;string&#x27; &#x26;&#x26; entry.query) {
+    return { path: entry.loader, query: entry.query };
+  }
+  else if (typeof entry.loader === &#x27;string&#x27; &#x26;&#x26; entry.options) {
+    return { path: entry.loader, query: &#x27;?&#x27; + JSON.stringify(entry.options) };
+  }
+  else if (typeof entry.loader === &#x27;string&#x27;) {
+    return extractPathAndQueryFromString(entry.loader);
+  }
+  else {
+    console.error(entry);
+    assert(false, &#x22;HappyPack: Unrecognized loader configuration variant!&#x22;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// happypack variant:
+if (typeof input === &#x27;object&#x27; &#x26;&#x26; input.hasOwnProperty(&#x27;path&#x27;)) {
+  normals = [ objectAssign({}, input) ];
+}
+// webpack object variant:
+else if (typeof input === &#x27;object&#x27;) {
+  normals = [].concat(exports.<span class="apidocCodeKeywordSpan">extractLoaders</span>(input));
+}
+// webpack/happypack string loader(s):
+else if (typeof input === &#x27;string&#x27;) {
+  normals = [].concat(extractPathAndQueryFromString(input));
+}
+
+return normals.map(function(loader) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.WebpackUtils.normalizeLoader" id="apidoc.element.happypack.WebpackUtils.normalizeLoader">
+        function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>normalizeLoader
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalizeLoader = function (input) {
+  var normals;
+
+  // happypack variant:
+  if (typeof input === &#x27;object&#x27; &#x26;&#x26; input.hasOwnProperty(&#x27;path&#x27;)) {
+    normals = [ objectAssign({}, input) ];
+  }
+  // webpack object variant:
+  else if (typeof input === &#x27;object&#x27;) {
+    normals = [].concat(exports.extractLoaders(input));
+  }
+  // webpack/happypack string loader(s):
+  else if (typeof input === &#x27;string&#x27;) {
+    normals = [].concat(extractPathAndQueryFromString(input));
+  }
+
+  return normals.map(function(loader) {
+    // normalize the query so that it is always a string prefixed by &#x27;?&#x27;
+    if (loader.query) {
+      if (typeof loader.query === &#x27;object&#x27;) {
+        loader.query = &#x27;?&#x27; + JSON.stringify(loader.query);
+      }
+      else if (typeof loader.query === &#x27;string&#x27;) {
+        loader.query = ensureHasLeadingMarker(loader.query);
+      }
+    }
+
+    // be compatible with webpack&#x27;s syntax within our own: if they specify
+    // a loader&#x27;s path using a &#x22;loader&#x22; attribute, map it to the &#x22;path&#x22; one
+    if (loader.loader) {
+      loader.path = loader.loader;
+      delete loader.loader;
+    }
+
+    return loader;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.happypack.WebpackUtils.resolveLoaders" id="apidoc.element.happypack.WebpackUtils.resolveLoaders">
+        function <span class="apidocSignatureSpan">happypack.WebpackUtils.</span>resolveLoaders
+        <span class="apidocSignatureSpan">(compiler, loaders, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveLoaders = function (compiler, loaders, done) {
+  var resolve = compiler.resolvers.loader.resolve;
+  var resolveContext = compiler.resolvers.loader;
+
+  // webpack2 has changed the signature for the resolve method where it accepts
+  // a fourth argument (context), so we need to sniff and support both versions
+  //
+  // fixes #23
+  var isWebpack2 = resolve.length === 4;
+
+  async.parallel(loaders.map(function(loader) {
+    assert(!!loader, &#x22;Invalid loader string to resolve!!! &#x22; + JSON.stringify(loaders));
+
+    return function(callback) {
+      var callArgs = [ compiler.context, loader, function(err, result) {
+        if (err) {
+          return callback(err);
+        }
+
+        callback(null, result);
+      }];
+
+      if (isWebpack2) {
+        resolve.apply(resolveContext, [ compiler.context ].concat(callArgs));
+      }
+      else {
+        resolve.apply(resolveContext, callArgs);
+      }
+    };
+  }), done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
