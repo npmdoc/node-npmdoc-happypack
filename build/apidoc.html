@@ -81,15 +81,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin">
-            function <span class="apidocSignatureSpan">happypack.</span>HappyPlugin
-            <span class="apidocSignatureSpan">(userConfig)</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyRPCHandler">
             function <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler
             <span class="apidocSignatureSpan">()</span>
@@ -145,12 +136,6 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>HappyFakeCompiler.prototype</span>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.</span>HappyPlugin.prototype</span>
 
         </li>
 
@@ -257,92 +242,6 @@
             <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyFakeCompiler.prototype.resolve">
             function <span class="apidocSignatureSpan">happypack.HappyFakeCompiler.prototype.</span>resolve
             <span class="apidocSignatureSpan">(context, resource, done)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyPlugin">module happypack.HappyPlugin</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.HappyPlugin">
-            function <span class="apidocSignatureSpan">happypack.</span>HappyPlugin
-            <span class="apidocSignatureSpan">(userConfig)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.ThreadPool">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.</span>ThreadPool
-            <span class="apidocSignatureSpan">(config)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.extractCompilerOptions">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.</span>extractCompilerOptions
-            <span class="apidocSignatureSpan">(options)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">happypack.HappyPlugin.</span>SERIALIZABLE_OPTIONS</span>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.happypack.HappyPlugin.prototype">module happypack.HappyPlugin.prototype</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.prototype.apply">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>apply
-            <span class="apidocSignatureSpan">(compiler)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.prototype.compile">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>compile
-            <span class="apidocSignatureSpan">(loader, loaderContext, done)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.prototype.generateRequest">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>generateRequest
-            <span class="apidocSignatureSpan">(resource)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.prototype.start">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>start
-            <span class="apidocSignatureSpan">(compiler, done)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.happypack.HappyPlugin.prototype.stop">
-            function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>stop
-            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -778,70 +677,6 @@
 
 
     <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin" id="apidoc.element.happypack.HappyPlugin">
-        function <span class="apidocSignatureSpan">happypack.</span>HappyPlugin
-        <span class="apidocSignatureSpan">(userConfig)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function HappyPlugin(userConfig) {
-  if (!(this instanceof HappyPlugin)) {
-    return new HappyPlugin(userConfig);
-  }
-
-  this.name = &#x27;HappyPack&#x27;;
-  this.state = {
-    started: false,
-    loaders: [],
-    baseLoaderRequest: &#x27;&#x27;,
-    foregroundThreadPool: null,
-    verbose: false,
-    debug: false,
-  };
-
-  this.config = OptionParser(userConfig, {
-    id:                       { type: &#x27;string&#x27;, default: &#x27;1&#x27; },
-    compilerId:               { type: &#x27;string&#x27;, default: &#x27;default&#x27; },
-    tempDir:                  { type: &#x27;string&#x27;, default: &#x27;.happypack&#x27; },
-    threads:                  { type: &#x27;number&#x27;, default: 3 },
-    threadPool:               { type: &#x27;object&#x27;, default: null },
-    cache:                    { type: &#x27;boolean&#x27;, default: true },
-    cachePath:                { type: &#x27;string&#x27; },
-    cacheContext:             { type: &#x27;object&#x27;, default: {} },
-    cacheSignatureGenerator:  { type: &#x27;function&#x27; },
-    verbose:                  { type: &#x27;boolean&#x27;, default: true },
-    verboseWhenProfiling:     { type: &#x27;boolean&#x27;, default: false },
-    debug:                    { type: &#x27;boolean&#x27;, default: process.env.DEBUG === &#x27;1&#x27; },
-    enabled:                  { type: &#x27;boolean&#x27;, default: true },
-    loaders:                  {
-      validate: function(value) {
-        if (!Array.isArray(value)) {
-          return &#x27;Loaders must be an array!&#x27;;
-        }
-        else if (value.length === 0) {
-          return &#x27;You must specify at least one loader!&#x27;;
-        }
-        else if (value.some(function(loader) {
-          return typeof loader !== &#x27;string&#x27; &#x26;&#x26; !loader.path &#x26;&#x26; !loader.loader;
-        })) {
-          return &#x27;Loader must have a @path or @loader property or be a string.&#x27;
-        }
-      },
-    }
-  }, &#x22;HappyPack[&#x22; + this.id + &#x22;]&#x22;);
-
-  this.id = this.config.id;
-
-  HappyUtils.mkdirSync(this.config.tempDir);
-
-  return this;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.happypack.HappyRPCHandler" id="apidoc.element.happypack.HappyRPCHandler">
         function <span class="apidocSignatureSpan">happypack.</span>HappyRPCHandler
         <span class="apidocSignatureSpan">()</span>
@@ -1013,10 +848,24 @@ plugins: [
     return hsh;
   }, {});
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+callback();
+    },
+
+    function launchAndConfigureThreads(callback) {
+var serializedOptions;
+var compilerOptions = HappyPlugin.<span class="apidocCodeKeywordSpan">extractCompilerOptions</span>(compiler.options);
+
+try {
+  serializedOptions = JSONSerializer.serialize(compilerOptions);
+}
+catch(e) {
+  console.error(&#x27;Happy[%s]: Unable to serialize options!!! This is an internal error.&#x27;, that.id);
+  console.error(compilerOptions);
+...</pre></li>
     </ul>
-
-
 
 
 
@@ -1231,477 +1080,6 @@ loader._remoteLoaderId = null;
 loader.version = 1; // https://webpack.github.io/docs/loaders.html#version
 loader.webpack = false;
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.happypack.HappyPlugin" id="apidoc.module.happypack.HappyPlugin">module happypack.HappyPlugin</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.HappyPlugin" id="apidoc.element.happypack.HappyPlugin.HappyPlugin">
-        function <span class="apidocSignatureSpan">happypack.</span>HappyPlugin
-        <span class="apidocSignatureSpan">(userConfig)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function HappyPlugin(userConfig) {
-  if (!(this instanceof HappyPlugin)) {
-    return new HappyPlugin(userConfig);
-  }
-
-  this.name = &#x27;HappyPack&#x27;;
-  this.state = {
-    started: false,
-    loaders: [],
-    baseLoaderRequest: &#x27;&#x27;,
-    foregroundThreadPool: null,
-    verbose: false,
-    debug: false,
-  };
-
-  this.config = OptionParser(userConfig, {
-    id:                       { type: &#x27;string&#x27;, default: &#x27;1&#x27; },
-    compilerId:               { type: &#x27;string&#x27;, default: &#x27;default&#x27; },
-    tempDir:                  { type: &#x27;string&#x27;, default: &#x27;.happypack&#x27; },
-    threads:                  { type: &#x27;number&#x27;, default: 3 },
-    threadPool:               { type: &#x27;object&#x27;, default: null },
-    cache:                    { type: &#x27;boolean&#x27;, default: true },
-    cachePath:                { type: &#x27;string&#x27; },
-    cacheContext:             { type: &#x27;object&#x27;, default: {} },
-    cacheSignatureGenerator:  { type: &#x27;function&#x27; },
-    verbose:                  { type: &#x27;boolean&#x27;, default: true },
-    verboseWhenProfiling:     { type: &#x27;boolean&#x27;, default: false },
-    debug:                    { type: &#x27;boolean&#x27;, default: process.env.DEBUG === &#x27;1&#x27; },
-    enabled:                  { type: &#x27;boolean&#x27;, default: true },
-    loaders:                  {
-      validate: function(value) {
-        if (!Array.isArray(value)) {
-          return &#x27;Loaders must be an array!&#x27;;
-        }
-        else if (value.length === 0) {
-          return &#x27;You must specify at least one loader!&#x27;;
-        }
-        else if (value.some(function(loader) {
-          return typeof loader !== &#x27;string&#x27; &#x26;&#x26; !loader.path &#x26;&#x26; !loader.loader;
-        })) {
-          return &#x27;Loader must have a @path or @loader property or be a string.&#x27;
-        }
-      },
-    }
-  }, &#x22;HappyPack[&#x22; + this.id + &#x22;]&#x22;);
-
-  this.id = this.config.id;
-
-  HappyUtils.mkdirSync(this.config.tempDir);
-
-  return this;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.ThreadPool" id="apidoc.element.happypack.HappyPlugin.ThreadPool">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.</span>ThreadPool
-        <span class="apidocSignatureSpan">(config)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function HappyThreadPool(config) {
-  var rpcHandler = new HappyRPCHandler();
-
-  assert(!isNaN(config.size),
-    &#x22;ArgumentError: HappyThreadPool requires a valid integer for its size, but got NaN.&#x22;
-  );
-
-  assert(config.size &#x3e; 0,
-    &#x22;ArgumentError: HappyThreadPool requires a positive integer for its size &#x22; +
-    &#x22;, but got {&#x22; + config.size + &#x22;}.&#x22;
-  );
-
-  var threads = createThreads(config.size, rpcHandler, {
-    id: config.id,
-    verbose: config.verbose,
-    debug: config.debug,
-  });
-
-  var getThread = RoundRobinThreadPool(threads);
-
-  return {
-    size: config.size,
-
-    start: function(compilerId, compiler, compilerOptions, done) {
-      rpcHandler.registerActiveCompiler(compilerId, compiler);
-
-      async.parallel(threads.filter(not(send(&#x27;isOpen&#x27;))).map(get(&#x27;open&#x27;)), function(err) {
-        if (err) {
-          return done(err);
-        }
-
-        async.parallel(threads.map(function(thread) {
-          return function(callback) {
-            thread.configure(compilerId, compilerOptions, callback);
-          }
-        }), done);
-      });
-    },
-
-    isRunning: function() {
-      return !threads.some(not(send(&#x27;isOpen&#x27;)));
-    },
-
-    compile: function(loaderId, loader, params, done) {
-      var worker = getThread();
-
-      rpcHandler.registerActiveLoader(loaderId, loader);
-
-      worker.compile(params, function() {
-        rpcHandler.unregisterActiveLoader(loaderId);
-
-        done.apply(null, arguments);
-      });
-    },
-
-    stop: function(compilerId) {
-      rpcHandler.unregisterActiveCompiler(compilerId);
-
-      if (!rpcHandler.isActive()) {
-        threads.filter(send(&#x27;isOpen&#x27;)).map(send(&#x27;close&#x27;));
-      }
-    },
-  };
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Here&#x27;s an example of using a custom pool of 5 threads that will be shared
-between loaders for both JS and SCSS/LESS/whatever sources:
-
-```javascript
-// @file: webpack.config.js
-var HappyPack = require(&#x27;happypack&#x27;);
-var happyThreadPool = HappyPack.<span class="apidocCodeKeywordSpan">ThreadPool</span>({ size: 5 });
-
-module.exports = {
-// ...
-plugins: [
-  new HappyPack({
-    id: &#x27;js&#x27;,
-    threadPool: happyThreadPool
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.extractCompilerOptions" id="apidoc.element.happypack.HappyPlugin.extractCompilerOptions">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.</span>extractCompilerOptions
-        <span class="apidocSignatureSpan">(options)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">extractCompilerOptions = function (options) {
-  var ALLOWED_KEYS = HappyPlugin.SERIALIZABLE_OPTIONS;
-
-  return Object.keys(options).reduce(function(hsh, key) {
-    if (ALLOWED_KEYS.indexOf(key) &#x3e; -1) {
-      hsh[key] = options[key];
-    }
-
-    return hsh;
-  }, {});
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.happypack.HappyPlugin.prototype" id="apidoc.module.happypack.HappyPlugin.prototype">module happypack.HappyPlugin.prototype</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.prototype.apply" id="apidoc.element.happypack.HappyPlugin.prototype.apply">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>apply
-        <span class="apidocSignatureSpan">(compiler)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">apply = function (compiler) {
-  var that, engageWatchMode;
-
-  if (this.config.enabled === false) {
-    return;
-  }
-
-  that = this;
-
-  this.state.verbose = isVerbose(compiler, this);
-  this.state.debug = isDebug(compiler, this);
-
-  this.threadPool = this.config.threadPool || HappyThreadPool({
-    id: this.id,
-    size: this.config.threads,
-    verbose: this.state.verbose,
-    debug: this.state.debug,
-  });
-
-  this.cache = HappyFSCache({
-    id: this.id,
-    path: this.config.cachePath ?
-      path.resolve(this.config.cachePath.replace(/\[id\]/g, this.id)) :
-      path.resolve(this.config.tempDir, &#x27;cache--&#x27; + this.id + &#x27;.json&#x27;),
-    verbose: this.state.verbose,
-    generateSignature: this.config.cacheSignatureGenerator
-  });
-
-  engageWatchMode = fnOnce(function() {
-    // Once the initial build has completed, we create a foreground worker and
-    // perform all compilations in this thread instead:
-    compiler.plugin(&#x27;done&#x27;, function() {
-      that.state.foregroundThreadPool = HappyForegroundThreadPool({
-        loaders: that.state.loaders,
-      });
-
-      that.state.foregroundThreadPool.start(that.config.compilerId, compiler, &#x27;{}&#x27;, Function.prototype);
-    });
-
-    // TODO: anything special to do here?
-    compiler.plugin(&#x27;failed&#x27;, function(err) {
-      console.warn(&#x27;fatal watch error!!!&#x27;, err);
-    });
-  });
-
-  compiler.plugin(&#x27;watch-run&#x27;, function(_, done) {
-    if (engageWatchMode() === fnOnce.ALREADY_CALLED) {
-      done();
-    }
-    else {
-      that.start(compiler, done);
-    }
-  });
-
-  compiler.plugin(&#x27;run&#x27;, that.start.bind(that));
-
-  // cleanup hooks:
-  compiler.plugin(&#x27;done&#x27;, that.stop.bind(that));
-
-  if (compiler.options.bail) {
-    compiler.plugin(&#x27;compilation&#x27;, function(compilation) {
-      compilation.plugin(&#x27;failed-module&#x27;, that.stop.bind(that));
-    });
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-    compile: function(loaderId, loader, params, done) {
-      rpcHandler.registerActiveLoader(loaderId, loader);
-
-      worker.compile(params, function() {
-        rpcHandler.unregisterActiveLoader(loaderId);
-
-        done.<span class="apidocCodeKeywordSpan">apply</span>(null, arguments);
-      });
-    },
-  };
-}
-
-module.exports = HappyForegroundThreadPool;
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.prototype.compile" id="apidoc.element.happypack.HappyPlugin.prototype.compile">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>compile
-        <span class="apidocSignatureSpan">(loader, loaderContext, done)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">compile = function (loader, loaderContext, done) {
-  if (this.state.foregroundThreadPool) {
-    return compileInForeground.call(this, loader, loaderContext, done);
-  }
-  else {
-    return compileInBackground.call(this, loader, loaderContext, done);
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-      worker = null;
-      rpcHandler = null;
-    },
-
-    compile: function(loaderId, loader, params, done) {
-      rpcHandler.registerActiveLoader(loaderId, loader);
-
-      worker.<span class="apidocCodeKeywordSpan">compile</span>(params, function() {
-        rpcHandler.unregisterActiveLoader(loaderId);
-
-        done.apply(null, arguments);
-      });
-    },
-  };
-}
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.prototype.generateRequest" id="apidoc.element.happypack.HappyPlugin.prototype.generateRequest">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>generateRequest
-        <span class="apidocSignatureSpan">(resource)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">generateRequest = function (resource) {
-  return this.state.baseLoaderRequest + &#x27;!&#x27; + resource;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    sourceMap: sourceMap,
-
-    useSourceMap: this._module.useSourceMap,
-
-    // TODO: maybe too much data being pushed down the drain here? we can infer
-    // all of this from `this.request`
-    context: this.context,
-    request: happyPlugin.<span class="apidocCodeKeywordSpan">generateRequest</span>(this.resource),
-    resource: this.resource,
-    resourcePath: this.resourcePath,
-    resourceQuery: this.resourceQuery,
-    target: this.target,
-  }, callback);
-}
-...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.prototype.start" id="apidoc.element.happypack.HappyPlugin.prototype.start">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>start
-        <span class="apidocSignatureSpan">(compiler, done)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">start = function (compiler, done) {
-  var that = this;
-
-  if (that.state.verbose) {
-    console.log(&#x27;Happy[%s]: Version: %s. Using cache? %s. Threads: %d%s&#x27;,
-      that.id, pkg.version,
-      that.config.cache ? &#x27;yes&#x27; : &#x27;no&#x27;,
-      that.threadPool.size,
-      that.config.threadPool ? &#x27; (shared pool)&#x27; : &#x27;&#x27;
-    );
-  }
-
-  async.series([
-    function normalizeLoaders(callback) {
-      var loaders = that.config.loaders;
-
-      assert(loaders &#x26;&#x26; loaders.length &#x3e; 0,
-        &#x22;HappyPlugin[&#x22; + that.id + &#x22;]; you have not specified any loaders &#x22; +
-        &#x22;and there is no matching loader entry with this id either.&#x22;
-      );
-
-      that.state.loaders = loaders.reduce(function(list, entry) {
-        return list.concat(WebpackUtils.normalizeLoader(entry));
-      }, []);
-
-      callback(null);
-    },
-
-    function resolveLoaders(callback) {
-      var loaderPaths = that.state.loaders.map(function(loader) {
-        return loader.path;
-      });
-
-      WebpackUtils.resolveLoaders(compiler, loaderPaths, function(err, resolvedPaths) {
-        if (err) return callback(err);
-
-        resolvedPaths.forEach(function (resolvedPath, index) {
-          var loader = that.state.loaders[index];
-          loader.path = resolvedPath;
-          loader.request = (loader.query) ? loader.path + loader.query : loader.path;
-        });
-
-        that.state.baseLoaderRequest = that.state.loaders.map(function(loader) {
-          return loader.path + (loader.query || &#x27;&#x27;);
-        }).join(&#x27;!&#x27;);
-
-        callback();
-      });
-    },
-
-    function loadCache(callback) {
-      if (that.config.cache) {
-        that.cache.load({
-          loaders: that.state.loaders,
-          external: that.config.cacheContext
-        });
-      }
-
-      callback();
-    },
-
-    function launchAndConfigureThreads(callback) {
-      var serializedOptions;
-      var compilerOptions = HappyPlugin.extractCompilerOptions(compiler.options);
-
-      try {
-        serializedOptions = JSONSerializer.serialize(compilerOptions);
-      }
-      catch(e) {
-        console.error(&#x27;Happy[%s]: Unable to serialize options!!! This is an internal error.&#x27;, that.id);
-        console.error(compilerOptions);
-
-        return callback(e);
-      }
-
-      that.threadPool.start(that.config.compilerId, compiler, serializedOptions, callback);
-    },
-
-    function markStarted(callback) {
-      if (that.state.verbose) {
-        console.log(&#x27;Happy[%s]: All set; signalling webpack to proceed.&#x27;, that.id);
-      }
-
-      that.state.started = true;
-
-      callback();
-    }
-  ], done);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.happypack.HappyPlugin.prototype.stop" id="apidoc.element.happypack.HappyPlugin.prototype.stop">
-        function <span class="apidocSignatureSpan">happypack.HappyPlugin.prototype.</span>stop
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">stop = function () {
-  assert(this.state.started, &#x22;HappyPlugin can not be torn down until started!&#x22;);
-
-  if (this.config.cache) {
-    this.cache.save();
-  }
-
-  this.threadPool.stop(this.config.compilerId);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1961,7 +1339,24 @@ compile: function(loaderId, loader, params, done) {
     <li>description and source-code<pre class="apidocCodePre">generateCompiledPath = function (filePath) {
   return &#x27;s-&#x27; + hashString(filePath + Math.random().toString(36).substr(2));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function compileAndUpdateCache(threadPool, loader, loaderContext, done) {
+  var cache = this.cache;
+  var filePath = loaderContext.resourcePath;
+
+  threadPool.compile(loaderContext.remoteLoaderId, loader, {
+loaders: this.state.loaders,
+compiledPath: path.resolve(this.config.tempDir, cache.getCompiledSourceCodePath(filePath) || HappyUtils.<span class="apidocCodeKeywordSpan
+">generateCompiledPath</span>(filePath)),
+loaderContext: loaderContext,
+  }, function(result) {
+var contents = fs.readFileSync(result.compiledPath, &#x27;utf-8&#x27;)
+var compiledMap;
+
+if (!result.success) {
+  cache.set(filePath, contents, null);
+...</pre></li>
     </ul>
 
 
@@ -2022,7 +1417,22 @@ if (!Utils.<span class="apidocCodeKeywordSpan">isReadable</span>(cachePath)) {
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+    },
+  }
+}, &#x22;HappyPack[&#x22; + this.id + &#x22;]&#x22;);
+
+this.id = this.config.id;
+
+HappyUtils.<span class="apidocCodeKeywordSpan">mkdirSync</span>(this.config.tempDir);
+
+return this;
+}
+
+HappyPlugin.prototype.apply = function(compiler) {
+var that, engageWatchMode;
+...</pre></li>
     </ul>
 
 
@@ -2141,20 +1551,20 @@ if (!Utils.<span class="apidocCodeKeywordSpan">isReadable</span>(cachePath)) {
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  loader.emitError(payload.message);
-},
+  var cached = {};
+  var sourceCodeFilePath = cache.getCompiledSourceCodePath(filePath);
+  var sourceMapFilePath = cache.getCompiledSourceMapPath(filePath);
 
-emitFile: function(loader, payload) {
-  loader.emitFile(
-    payload.name,
-    payload.contents,
-    SourceMapSerializer.<span class="apidocCodeKeywordSpan">deserialize</span>(payload.sourceMap)
-  );
-},
+  cached.sourceCode = fs.readFileSync(sourceCodeFilePath, &#x27;utf-8&#x27;);
 
-addDependency: function(loader, payload) {
-  loader.addDependency(payload.file);
-},
+  if (HappyUtils.isReadable(sourceMapFilePath)) {
+    cached.sourceMap = SourceMapSerializer.<span class="apidocCodeKeywordSpan">deserialize</span>(
+      fs.readFileSync(sourceMapFilePath, &#x27;utf-8&#x27;)
+    );
+  }
+
+  return cached;
+}
 ...</pre></li>
     </ul>
 
@@ -2211,22 +1621,21 @@ addDependency: function(loader, payload) {
   }, 0, function() {});
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+    },
 
-if (err) {
-  console.error(err);
-  fs.writeFileSync(compiledPath, serializeError(err), &#x27;utf-8&#x27;);
+    function launchAndConfigureThreads(callback) {
+var serializedOptions;
+var compilerOptions = HappyPlugin.extractCompilerOptions(compiler.options);
+
+try {
+  serializedOptions = JSONSerializer.<span class="apidocCodeKeywordSpan">serialize</span>(compilerOptions);
 }
-else {
-  fs.writeFileSync(compiledPath, source);
-  fs.writeFileSync(compiledPath + &#x27;.map&#x27;, SourceMapSerializer.<span class="apidocCodeKeywordSpan">serialize</span>(sourceMap
-));
+catch(e) {
+  console.error(&#x27;Happy[%s]: Unable to serialize options!!! This is an internal error.&#x27;, that.id);
+  console.error(compilerOptions);
 
-  success = true;
+  return callback(e);
 }
-
-done({
-  sourcePath: params.loaderContext.resourcePath,
-  compiledPath: compiledPath,
 ...</pre></li>
     </ul>
 
@@ -2561,21 +1970,22 @@ HappyRPCHandler.prototype.registerActiveLoader = function(id, instance) {
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+    compiledPath: path.resolve(this.config.tempDir, cache.getCompiledSourceCodePath(filePath) || HappyUtils.generateCompiledPath
+(filePath)),
+    loaderContext: loaderContext,
+  }, function(result) {
+    var contents = fs.readFileSync(result.compiledPath, &#x27;utf-8&#x27;)
+    var compiledMap;
 
-function HappyRPCHandler() {
-  this.activeLoaders = new SharedPtrMap();
-  this.activeCompilers = new SharedPtrMap();
-}
+    if (!result.success) {
+cache.<span class="apidocCodeKeywordSpan">set</span>(filePath, contents, null);
 
-HappyRPCHandler.prototype.registerActiveCompiler = function(id, compiler) {
-  this.activeCompilers.<span class="apidocCodeKeywordSpan">set</span>(id || &#x27;default&#x27;, compiler);
-};
+done(contents);
+    }
+    else {
+cache.set(filePath, null, result.compiledPath);
 
-HappyRPCHandler.prototype.isActive = function() {
-  return this.activeCompilers.getSize() &#x3e; 0;
-};
-
-HappyRPCHandler.prototype.unregisterActiveCompiler = function(id) {
+compiledMap = SourceMapSerializer.deserialize(
 ...</pre></li>
     </ul>
 
@@ -2604,20 +2014,20 @@ HappyRPCHandler.prototype.unregisterActiveCompiler = function(id) {
   return x || null;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  loader.emitError(payload.message);
-},
+  var cached = {};
+  var sourceCodeFilePath = cache.getCompiledSourceCodePath(filePath);
+  var sourceMapFilePath = cache.getCompiledSourceMapPath(filePath);
 
-emitFile: function(loader, payload) {
-  loader.emitFile(
-    payload.name,
-    payload.contents,
-    SourceMapSerializer.<span class="apidocCodeKeywordSpan">deserialize</span>(payload.sourceMap)
-  );
-},
+  cached.sourceCode = fs.readFileSync(sourceCodeFilePath, &#x27;utf-8&#x27;);
 
-addDependency: function(loader, payload) {
-  loader.addDependency(payload.file);
-},
+  if (HappyUtils.isReadable(sourceMapFilePath)) {
+    cached.sourceMap = SourceMapSerializer.<span class="apidocCodeKeywordSpan">deserialize</span>(
+      fs.readFileSync(sourceMapFilePath, &#x27;utf-8&#x27;)
+    );
+  }
+
+  return cached;
+}
 ...</pre></li>
     </ul>
 
@@ -2639,22 +2049,21 @@ addDependency: function(loader, payload) {
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+    },
 
-if (err) {
-  console.error(err);
-  fs.writeFileSync(compiledPath, serializeError(err), &#x27;utf-8&#x27;);
+    function launchAndConfigureThreads(callback) {
+var serializedOptions;
+var compilerOptions = HappyPlugin.extractCompilerOptions(compiler.options);
+
+try {
+  serializedOptions = JSONSerializer.<span class="apidocCodeKeywordSpan">serialize</span>(compilerOptions);
 }
-else {
-  fs.writeFileSync(compiledPath, source);
-  fs.writeFileSync(compiledPath + &#x27;.map&#x27;, SourceMapSerializer.<span class="apidocCodeKeywordSpan">serialize</span>(sourceMap
-));
+catch(e) {
+  console.error(&#x27;Happy[%s]: Unable to serialize options!!! This is an internal error.&#x27;, that.id);
+  console.error(compilerOptions);
 
-  success = true;
+  return callback(e);
 }
-
-done({
-  sourcePath: params.loaderContext.resourcePath,
-  compiledPath: compiledPath,
 ...</pre></li>
     </ul>
 
@@ -2830,7 +2239,23 @@ return normals.map(function(loader) {
     return loader;
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  assert(loaders &#x26;&#x26; loaders.length &#x3e; 0,
+    &#x22;HappyPlugin[&#x22; + that.id + &#x22;]; you have not specified any loaders &#x22; +
+    &#x22;and there is no matching loader entry with this id either.&#x22;
+  );
+
+  that.state.loaders = loaders.reduce(function(list, entry) {
+    return list.concat(WebpackUtils.<span class="apidocCodeKeywordSpan">normalizeLoader</span>(entry));
+  }, []);
+
+  callback(null);
+},
+
+function resolveLoaders(callback) {
+  var loaderPaths = that.state.loaders.map(function(loader) {
+...</pre></li>
     </ul>
 
 
@@ -2873,7 +2298,23 @@ return normals.map(function(loader) {
     };
   }), done);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    },
+
+    function resolveLoaders(callback) {
+      var loaderPaths = that.state.loaders.map(function(loader) {
+return loader.path;
+      });
+
+      WebpackUtils.<span class="apidocCodeKeywordSpan">resolveLoaders</span>(compiler, loaderPaths, function(err, resolvedPaths) {
+if (err) return callback(err);
+
+resolvedPaths.forEach(function (resolvedPath, index) {
+  var loader = that.state.loaders[index];
+  loader.path = resolvedPath;
+  loader.request = (loader.query) ? loader.path + loader.query : loader.path;
+});
+...</pre></li>
     </ul>
 
 
