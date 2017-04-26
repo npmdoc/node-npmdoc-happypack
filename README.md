@@ -1,6 +1,6 @@
 # npmdoc-happypack
 
-#### api documentation for  [happypack (v3.0.3)](https://github.com/amireh/happypack#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-happypack.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-happypack) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-happypack.svg)](https://travis-ci.org/npmdoc/node-npmdoc-happypack)
+#### basic api documentation for  [happypack (v3.0.3)](https://github.com/amireh/happypack#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-happypack.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-happypack) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-happypack.svg)](https://travis-ci.org/npmdoc/node-npmdoc-happypack)
 
 #### webpack speed booster, makes you happy!
 
@@ -97,7 +97,8 @@
         "test-examples": "./examples/build-all.sh",
         "test:coverage": "nyc npm test"
     },
-    "version": "3.0.3"
+    "version": "3.0.3",
+    "bin": {}
 }
 ```
 
